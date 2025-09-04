@@ -1,0 +1,18 @@
+{% extends "viewflow/workflow/task.html" %}
+{% load i18n %}
+
+{% block actions %}
+  {% with names=request.user.groups.all|join:"," %}
+    {% if request.user.is_superuser %}
+      {{ block.super }}
+    {% elif required_role %}
+      {% if request.user.userworkflowrole_set.filter(role__name=required_role).exists %}
+        {{ block.super }}
+      {% else %}
+        <div class="btn-toolbar"></div>
+      {% endif %}
+    {% else %}
+      {{ block.super }}
+    {% endif %}
+  {% endwith %}
+{% endblock %}

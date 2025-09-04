@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2>Workflow Step: {{ workflow_step.title }}</h2>
+  <p><strong>Required Role:</strong> {{ required_role }}</p>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <!-- Render core decision & comment -->
+    <div class="mb-3">
+      {{ form.decision.label_tag }}
+      {{ form.decision }}
+    </div>
+
+    <div class="mb-3">
+      {{ form.comment.label_tag }}
+      {{ form.comment }}
+    </div>
+
+    <!-- Render dynamic form fields if present -->
+    {% for field in form %}
+      {% if field.name not in "decision comment" %}
+      <div class="mb-3">
+        {{ field.label_tag }}
+        {{ field }}
+        {% if field.help_text %}
+          <small class="form-text text-muted">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary">Execute</button>
+  </form>
+
+  <!-- Show current workflow history -->
+  {% if object.ticket_data.wf_results %}
+    <hr>
+    <h4>Previous Decisions</h4>
+    <ul>
+      {% for r in object.ticket_data.wf_results %}
+        <li>
+          <strong>{{ r.step }}</strong> ({{ r.role }}): {{ r.decision }}
+          {% if r.comment %} — "{{ r.comment }}"{% endif %}
+          <em>by {{ r.by }}</em>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+{% endblock %}

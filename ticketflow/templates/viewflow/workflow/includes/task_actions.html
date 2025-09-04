@@ -1,0 +1,16 @@
+{% extends "viewflow/workflow/task_actions.html" %}
+{% load i18n %}
+
+{% block actions %}
+  {% if request.user.is_superuser %}
+    {{ block.super }}
+  {% elif required_role %}
+    {% if request.user.userworkflowrole_set.filter(role__name=required_role).exists %}
+      {{ block.super }}
+    {% else %}
+      <div class="btn-toolbar" role="toolbar" aria-label="{% trans 'Task actions' %}"></div>
+    {% endif %}
+  {% else %}
+    {{ block.super }}  {# fallback for static flows that don’t set required_role #}
+  {% endif %}
+{% endblock %}

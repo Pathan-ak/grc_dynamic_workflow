@@ -1,0 +1,262 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-02 19:36+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: admin.py:49 admin.py:168
+#, python-format
+msgid "Form configuration: %s"
+msgstr "Formulareinstellungen: %s"
+
+#: admin.py:58
+msgid "is active"
+msgstr "ist aktiv"
+
+#: admin.py:178
+msgid "Configuration"
+msgstr "Einstellungen"
+
+#: admin.py:187
+msgid "No submissions yet."
+msgstr "Noch keine Formulardaten."
+
+#: admin.py:200
+msgid "removed field"
+msgstr "entferntes Feld"
+
+#: apps.py:9
+msgid "Form Designer"
+msgstr "Form-Designer"
+
+#: contents.py:19 contents.py:33 models.py:108 models.py:236 models.py:318
+msgid "form"
+msgstr "Formular"
+
+#: contents.py:23
+msgid "show form title"
+msgstr "Formulartitel anzeigen"
+
+#: contents.py:25
+msgid "success message"
+msgstr "Mitteilung bei Erfolg"
+
+#: contents.py:26
+msgid "Custom message to display after valid form is submitted"
+msgstr "Mitteilung, welche angezeigt wird, wenn ein gültiges Formular abgeschickt wird"
+
+#: contents.py:34 models.py:109
+msgid "forms"
+msgstr "Formulare"
+
+#: default_field_types.py:11
+#, python-format
+msgid "You can't specify choices for %s fields"
+msgstr "Sie können keine Wahlmöglichkeiten für %s-Felder angeben"
+
+#: default_field_types.py:18
+#, python-format
+msgid "Please specify choices for %s fields"
+msgstr "Bitte geben Sie Wahlmöglichkeiten für %s-Felder an"
+
+#: default_field_types.py:25
+msgid "text"
+msgstr "Text"
+
+#: default_field_types.py:31 models.py:79
+msgid "email address"
+msgstr "E-Mail-Adresse"
+
+#: default_field_types.py:37
+msgid "long text"
+msgstr "Langer Text"
+
+#: default_field_types.py:43
+msgid "checkbox"
+msgstr "Checkbox"
+
+#: default_field_types.py:49
+msgid "select"
+msgstr "Auswahlbox"
+
+#: default_field_types.py:55
+msgid "radio"
+msgstr "Auswahl (Radiobuttons)"
+
+#: default_field_types.py:61
+msgid "multiple select"
+msgstr "Mehrfachauswahl"
+
+#: default_field_types.py:69
+msgid "date"
+msgstr "Datum"
+
+#: default_field_types.py:77
+msgid "hidden"
+msgstr "versteckt"
+
+#: default_field_types.py:94
+msgid "reCAPTCHA v2"
+msgstr "reCAPTCHA v2"
+
+#: default_field_types.py:101
+msgid "reCAPTCHA v3"
+msgstr "reCAPTCHA v3"
+
+#: models.py:47
+msgid "Thank you, your input has been received."
+msgstr "Vielen Dank"
+
+#: models.py:60
+msgid "Save form submission"
+msgstr "Formulardaten sichern"
+
+#: models.py:62
+msgid "Save form submissions in the database so that they may be exported later."
+msgstr "Speichert die Formulardaten in der Datenbank, so dass sie später exportiert werden können."
+
+#: models.py:71
+msgid "Send email"
+msgstr "E-Mail versenden"
+
+#: models.py:73
+msgid "Send the submitted form data to a list of email addresses."
+msgstr "Versendet die Formulardaten an eine Liste von Emailadressen."
+
+#: models.py:82
+msgid "Separate multiple email addresses with commas."
+msgstr "Mehrere E-Mailadressen mit Kommas trennen."
+
+#: models.py:90
+msgid "author's email field"
+msgstr "Autoren-E-Mail-Feld"
+
+#: models.py:92
+msgid "The author of the submission will be added to the Cc: if this is set to an existing form field below."
+msgstr "Die Autor*innen der Formulardaten werden zum Cc: hinzugefügt wenn ein Name eines unten existierenden Formularfelds eingefügt wird."
+
+#: models.py:104
+msgid "title"
+msgstr "Titel"
+
+#: models.py:105
+msgid "config"
+msgstr "Konfiguration"
+
+#: models.py:210
+msgid "Enter a value consisting only of lowercase letters, numbers, dashes and the underscore."
+msgstr "Einen Wert eingeben, welcher nur aus Kleinbuchstaben, Ziffern, Strichen und dem Unterstrich besteht."
+
+#: models.py:219
+msgid "Data is saved using this name. Changing it may result in data loss. This field only allows a-z, 0-9, - and _ as characters."
+msgstr "Daten werden mit diesem Namen gespeichert. Eine Änderung kann zu Datenverlust führen. Dieses Feld erlaubt nur a-z, 0-9, - und _ als Zeichen."
+
+#: models.py:238
+msgid "ordering"
+msgstr "Sortierung"
+
+#: models.py:240
+msgid "field title"
+msgstr "Feldtitel"
+
+#: models.py:241
+msgid "field name"
+msgstr "Feldname"
+
+#: models.py:244
+msgid "field type"
+msgstr "Feldtyp"
+
+#: models.py:249
+msgid "choices"
+msgstr "Wahlmöglichkeiten"
+
+#: models.py:249
+msgid "Comma-separated"
+msgstr "Durch Kommata getrennt"
+
+#: models.py:252
+msgid "help text"
+msgstr "Hilfstext"
+
+#: models.py:255
+msgid "Optional extra explanatory text beside the field"
+msgstr "Optionaler zusätzlicher Erklärungstext neben dem Feld"
+
+#: models.py:258
+msgid "default value"
+msgstr "Standardwert"
+
+#: models.py:261
+msgid "Optional default value of the field"
+msgstr "Optionaler Standardwert des Feldes"
+
+#: models.py:263
+msgid "is required"
+msgstr "Wird benötigt"
+
+#: models.py:268
+msgid "form field"
+msgstr "Formularfeld"
+
+#: models.py:269
+msgid "form fields"
+msgstr "Formularfelder"
+
+#: models.py:315
+msgid "submitted at"
+msgstr "abgeschickt um"
+
+#: models.py:322
+msgid "data"
+msgstr "Daten"
+
+#: models.py:323
+msgid "URL"
+msgstr "URL"
+
+#: models.py:327
+msgid "form submission"
+msgstr "Formulardaten"
+
+#: models.py:328
+msgid "form submissions"
+msgstr "Formulardaten"
+
+#: models.py:362
+msgid "submitted"
+msgstr "abgeschickt"
+
+#: models.py:363
+msgid "date submitted"
+msgstr "abgeschickt am"
+
+#: models.py:364
+msgid "time submitted"
+msgstr "abgeschickt um"
+
+#: models.py:365
+msgid "form URL"
+msgstr "Formular-URL"
+
+#: templates/admin/form_designer/form/change_form.html:6
+msgid "Export submissions"
+msgstr "Formulardaten exportieren"
+
+#: templates/content/form/form.html:13
+msgid "Submit"
+msgstr "Abschicken"

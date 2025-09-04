@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+  <h2>My Workflow Tasks</h2>
+
+  <!-- Filter toggle -->
+  <div class="mb-3">
+    <a href="?filter=active" class="btn {% if filter_mode == 'active' %}btn-primary{% else %}btn-outline-primary{% endif %} btn-sm">
+      Active
+    </a>
+    <a href="?filter=completed" class="btn {% if filter_mode == 'completed' %}btn-primary{% else %}btn-outline-primary{% endif %} btn-sm">
+      Completed
+    </a>
+  </div>
+
+  {% if processes %}
+    <ul class="list-group">
+      {% for item in processes %}
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <div>
+              <strong>Process #{{ item.process.pk }}</strong><br>
+              {% if item.step %}
+                <span><strong>Step:</strong> {{ item.step.title }}</span><br>
+                <span><strong>Required Role:</strong> {{ item.required_role }}</span>
+              {% else %}
+                <span><strong>Step:</strong> None (Completed)</span>
+              {% endif %}
+            </div>
+            <div>
+              {% if item.status == "Pending" %}
+                <span class="badge bg-secondary">{{ item.status }}</span>
+              {% elif item.status == "In Progress" %}
+                <span class="badge bg-info text-dark">{{ item.status }}</span>
+              {% elif item.status == "Completed" %}
+                <span class="badge bg-success">{{ item.status }}</span>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- History -->
+          {% if item.history %}
+            <hr>
+            <h6>History</h6>
+            <ul>
+              {% for h in item.history %}
+                <li>
+                  <strong>{{ h.step }}</strong> ({{ h.role }}): {{ h.decision }}
+                  {% if h.comment %} — "{{ h.comment }}"{% endif %}
+                  <em>by {{ h.by }}</em>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p><em>No previous decisions yet.</em></p>
+          {% endif %}
+
+          {% if item.status != "Completed" %}
+            <a href="{% url 'dbworkflow_step' pk=item.process.pk %}" class="btn btn-sm btn-primary mt-2">Open</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No tasks in this category.</p>
+  {% endif %}
+</div>
+{% endblock %}
